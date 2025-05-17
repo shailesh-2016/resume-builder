@@ -2,6 +2,7 @@ const express = require("express");
 const app = express();
 require("dotenv").config();
 const PORT = process.env.PORT || 3000;
+const CORS=require("cors")
 
 const userRoute=require("./routes/userRoute")
 const resumeRoute=require("./routes/resumeRoute")
@@ -13,6 +14,7 @@ db();
 ///use
 app.use(express.json())
 app.use(express.urlencoded({extended:true}))
+app.use(CORS())
 
 //api
 app.use("/api/auth",userRoute)
