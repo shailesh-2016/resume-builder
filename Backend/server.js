@@ -15,6 +15,7 @@ db();
 app.use(express.json())
 app.use(express.urlencoded({extended:true}))
 app.use(CORS())
+app.use("/uploads", express.static("uploads"));
 
 //api
 app.use("/api/auth",userRoute)
